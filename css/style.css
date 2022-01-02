@@ -1,15 +1,593 @@
 body{
-    font-size: 14px;
+    font-size: 16px;
+    
+    
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 26px;
+    color: #6A707B;
+    height: 100%;
+    min-width: 375px;
+    overflow: auto;
+}
+
+a:link {
+    color: #131821;
+    text-decoration: underline;
+}
+a:hover {
+    color: #4066A5;
+    text-decoration: underline;
+}
+a:active {
+    color: #233759;
+    text-decoration: underline;
+}
+
+ul {
+    padding: 0;
+}
+
+#form-email {
+    color: #6A707B;
     
 }
-h1{
-    color: green;
+#form-email:focus {
+    border: 1px solid #E3E3E4;
+    border-left: 4px solid #4066A5;
+    box-sizing: border-box;
+    box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
 }
-div{
-        font-size: 20px;
+#form-email:hover {
+    color: #131821;
+    border: 1px solid #4066A5;
+    border-left: 4px solid #4066A5;
+    
+    box-sizing: border-box;
+    box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
 }
 
 
-.red {
-    color: red;
+
+.facebook:hover {
+    background: #4267B2;
+    box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+    color: rgba(255, 255, 255, 1);
+
+}
+.instagram:hover {
+    background: #C13584;
+    box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+    color: rgba(255, 255, 255, 1);
+}
+.twitter:hover {
+    background: #1DA1F2;
+    box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+    color: rgba(255, 255, 255, 1);
+}
+.youtube:hover {
+    background: #FF0000;
+    box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+    color: rgba(255, 255, 255, 1);
+}
+
+.facebook:active {
+    background: #2F4A80;
+    box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+    color: rgba(255, 255, 255, 1);
+
+}
+.instagram:active {
+    background: #8F2762;
+    box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+    color: rgba(255, 255, 255, 1);
+}
+.twitter:active {
+    background: #177FBF;
+    box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+    color: rgba(255, 255, 255, 1);
+}
+.youtube:active {
+    background: #CC0000;
+    box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+    color: rgba(255, 255, 255, 1);
+}
+
+.wrapper {
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+._ibg {
+    position: relative;
+    
+}
+._ibg img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: left;
+}
+
+
+.header {
+    /*position: absolute;*/
+    
+    padding-top: 5.21vw;
+    
+    z-index: 50;
+}
+.header__container {
+
+    
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+
+    
+}
+
+.header-body {
+    max-width: 480px;
+    
+    padding: 0px 15px;
+    margin: 0px auto;
+    box-sizing: content-box;
+}
+
+.nav{
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 3px;
+    padding-left: 0;
+}
+.nav>li{
+    margin-left: 31px;
+}
+
+.nav>li>a {
+    color: #6A707B;
+    text-decoration: none;
+}
+
+.nav>li>a:hover {
+    color: #4066A5;
+    text-decoration: underline;
+}
+.nav>li>a:active {
+    color: #233759;
+    text-decoration: underline;
+}
+
+.logo{
+    display: flex;
+    
+}
+.logo_img{
+    display: block;
+    width: 25px;
+    height: 40px;
+    background-image: url(../img/logo.svg);
+    margin-right: 15px;
+}
+.logo_text{
+    /*width: 16px;*/
+    margin-top:17px;
+}
+
+/*--MAIN------*/
+
+.page{
+    flex-grow: 1;
+    display: flex;
+    min-height: 100vh;
+}
+.page__bar-block{
+    flex: 0 1 35.4%;
+    min-height: 100vh;
+    min-width: 400px;
+    z-index: 5;
+}
+.page__main-block {
+    flex: 0 1 64.6%;
+    min-height: 100vh;
+}
+
+
+
+.page-bar__body{
+    /*background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);*/
+    height: 100%;
+}
+
+.page__thanks-body{
+    margin-top: 124px;
+    display: none;
+}
+
+.page__thanks-body h1{
+    margin-top: 22px;
+    margin-bottom: 21px;
+}
+
+.page__newsletter-body{
+    margin-top: 12vw;
+    
+}
+
+.page__form-body {
+    margin-top: 2.5vw;
+    padding-left: 5.21vw;
+    
+}
+
+.newsletter {
+    max-width: 400px;
+    
+    padding: 0px 15px;
+    margin: 0px auto;
+    box-sizing: content-box;
+}
+
+.page__newsletter-body h1 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+
+
+.newsletter h1 {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 44px;
+    color: #131821;
+    
+    
+}
+.newsletter p {
+    line-height: 28px;
+}
+
+
+#form-email{
+    padding: 22px 40px;
+    
+    width: calc(100% + 83px);
+    background: #FFFFFF;
+    border: 1px solid #E3E3E4;
+    box-sizing: border-box;
+    border-left: 4px solid #4066A5;
+    line-height: 24px;
+    
+    
+}
+.base .submit{
+    position: absolute;
+    right: -83px;
+    top: 0;
+    
+    
+    /*border: 1px solid #E3E3E4;
+    border-left: 0;
+    height: 70px;
+    width: 83px;*/
+    z-index: 10;
+    cursor: pointer;
+}
+.input-group{
+    position: relative;
+}
+.base .submit img{
+    align-items: center;
+    margin: 28px 40px 28px 0;
+    
+}
+
+/* default checkbox */
+.checkbox{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 54px;
+    margin-left: 40px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    font-size: 16px;
+    line-height: 28px;
+    color: #6A707B;
+}
+.checkbox-label{
+    margin-left: 6px;
+}
+
+
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #FFFFFF;
+    border: 1px solid #E3E3E4;
+    border-radius: 3px;
+}
+.checkbox:hover input ~ .checkmark {
+    background-color: #FFFFFF;
+}
+.checkbox input:checked ~ .checkmark {
+    background: #4066A5;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+/* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.page__line-body{
+    margin-top: 50px;
+}
+.line {
+    max-width: 400px;
+    padding: 0px 15px;
+    margin: 0px auto;
+    box-sizing: content-box;
+}
+.border-top {
+    border-top: 1px solid #E3E3E4;
+}
+
+footer {
+    margin-top: 49px;
+    
+}
+.footer {
+    max-width: 244px;
+    padding: 0px 15px;
+    margin: 0px auto;
+    box-sizing: content-box;
+    
+}
+
+.social {
+    list-style-type: none;
+    
+    display: flex;
+}
+.social>li:not(:last-child){
+    margin-right: 20px;
+    
+}
+.social>li>a {
+
+    text-decoration: none;
+    
+    
+    
+}
+.social-item{
+    width: 46px;
+    height: 46px;
+    border: 2px solid #E3E3E4;
+    border-radius: 23px;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+    color: rgba(19, 24, 33, 0.3);
+    font-size: 17px;
+}
+.social-item>svg{
+    margin-top: 12px;
+    
+}
+
+
+.main-block {
+    
+}
+.main-block__container {
+}
+
+.main-block__image {
+    height: 100%;
+}
+
+
+
+
+@media (max-width: 700px) {
+    
+    .page__bar-block{
+        min-width: auto;
+        flex: none;
+    }
+    .page-bar__body{
+        background: none;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    
+    
+    .header{
+        padding: 0px;
+        background-color: white;
+        min-width: 100vw;
+    }
+    .header-body {
+        min-width: 375px;
+        
+        box-sizing: border-box;
+        padding: 10px 20px 15px 20px;
+        
+    }
+    .nav>li {
+        margin-left: 21px;
+    }
+    
+    .logo_text{
+        display: none;
+    }
+
+    ._container{
+        min-width: 335px;
+        background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
+        margin: 0px auto;
+        margin: 188px 20px 0px 20px;
+    }
+
+    .page__thanks-body{
+        margin-top: 188px;
+        padding-top: 30px;
+    }
+    .page__thanks-body h1{
+        margin-top: 32px;
+        margin-bottom: 10px;
+    }
+    .page__thanks-body p{
+        margin-top: 0;
+        margin-bottom: 39px;
+    }
+
+    .page__newsletter-body{
+        padding-top: 32px;
+        margin: 0;
+    }
+    .newsletter {
+        width: 335px;
+        box-sizing: border-box;
+        padding: 0 20px;
+    }
+    .newsletter h1{
+        font-size: 24px;
+        line-height: 34px;
+    }
+    .page__newsletter-body h1{
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 24px;
+        line-height: 34px;
+    }
+    .page__newsletter-body p{
+        margin-top: 0;
+    }
+
+    .newsletter p {
+        line-height: 26px;
+    }
+    
+
+    .page__form-body {
+        margin-top: 20px;
+        padding: 0 20px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    
+    #form-email {
+        width: 100%;
+        padding: 17px 19px;
+    }
+    .base .submit{
+        right: 0;
+        
+    }
+    .base .submit img {
+        margin: 23px 15px 23px 0;
+    }
+    .checkbox{
+        margin-top: 21px;
+        margin-left: 0;
+    }
+    .page__line-body{
+        margin-top: 21px;
+    }
+    footer{
+        margin-top: 20px;
+        padding-bottom: 17px;
+        
+    }
+
+    .footer{
+        padding: 0px 68px 0px 53px;
+    }
+    .social>li:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    /*---- Summer Img -----*/
+    .page__main-block{
+        position:absolute;
+        top: 0;
+        left: 0;
+        flex: none;
+        width: 100%;
+        height: 100%;
+    }
+    ._ibg {
+        position: unset;
+        
+    }
+    ._ibg img{
+        object-position: -280px 0px;
+        top: 66px;
+        height: calc(100% - 66px);
+    }
+    
+    
+}
+
+@media (max-width: 375px) {
+    .page__main-block {
+        width: 375px;        
+    }
+    .header{
+        width: 375px;
+    }
+    .page__main-block{
+        width: 375px;
+    }
 }
