@@ -95,8 +95,8 @@ ul {
 }
 
 .wrapper {
-    height: 100%;
-    
+    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -191,17 +191,18 @@ ul {
 .page{
     flex-grow: 1;
     display: flex;
-    min-height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 .page__bar-block{
     flex: 0 1 35.4%;
-    min-height: 100vh;
-    min-width: 400px;
+    min-height: 100%;
+    
     z-index: 5;
 }
 .page__main-block {
     flex: 0 1 64.6%;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 
@@ -289,6 +290,7 @@ ul {
 }
 .input-group{
     position: relative;
+    padding-bottom: 26px;
 }
 .base .submit img{
     align-items: center;
@@ -301,7 +303,7 @@ ul {
     display: block;
     position: relative;
     padding-left: 35px;
-    margin-top: 54px;
+    /*margin-top: 54px;*/
     margin-left: 40px;
     cursor: pointer;
     font-size: 22px;
@@ -434,13 +436,34 @@ footer {
     height: 100%;
 }
 
+.input-group small {
+	
+	visibility: hidden;
+}
+.input-group.success small {
+	visibility: visible;
+    color: #2ecc71;
+}
+.input-group.error small {
+	visibility: visible;
+    color: #e74c3c;
+}
 
 
 
-@media (max-width: 700px) {
+@media (max-width: 1700px) {
+    .checkbox{
+        margin-left: 0;
+    }
+    .page__form-body{
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 585px) {
     
     .page__bar-block{
-        min-width: auto;
+        width: 100%;
         flex: none;
     }
     .page-bar__body{
@@ -454,7 +477,7 @@ footer {
     .header{
         padding: 0px;
         background-color: white;
-        min-width: 100vw;
+        width: 100%;
     }
     .header-body {
         min-width: 375px;
@@ -472,9 +495,9 @@ footer {
     }
 
     ._container{
-        min-width: 335px;
+        
         background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
-        margin: 0px auto;
+        
         margin: 188px 20px 0px 20px;
     }
 
@@ -496,7 +519,7 @@ footer {
         margin: 0;
     }
     .newsletter {
-        width: 335px;
+        
         box-sizing: border-box;
         padding: 0 20px;
     }
@@ -520,7 +543,7 @@ footer {
     
 
     .page__form-body {
-        margin-top: 20px;
+        margin-top: 18px;
         padding: 0 20px;
         font-size: 16px;
         line-height: 24px;
@@ -529,7 +552,7 @@ footer {
     
     #form-email {
         width: 100%;
-        padding: 17px 19px;
+        padding: 17px 15px;
     }
     .base .submit{
         right: 0;
@@ -577,17 +600,36 @@ footer {
         height: calc(100% - 66px);
     }
     
-    
+    .input-group small {
+        
+    }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 376px) {
     .page__main-block {
         width: 375px;        
     }
     .header{
         width: 375px;
     }
-    .page__main-block{
+    .input-group{
+        padding-bottom: 0;
+    }
+    .page-bar__body{
         width: 375px;
+    }
+    .page__bar-block{
+        min-width: 375px;
+    }
+    .input-group{
+        padding-bottom: 0;
+    }
+    .checkbox {
+        
+    }
+    
+
+    ._ibg img{
+        
     }
 }

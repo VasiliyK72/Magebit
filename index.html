@@ -32,14 +32,14 @@
                         </div>
                     </header>
                     <div class="_container">
-                        <div class="page__newsletter-body">
+                        <div class="page__newsletter-body" id="page__newsletter-body">
                             <div class="newsletter">
                                 <h1>Subscribe to newsletter</h1>
                                 <p>Subscribe to our newsletter and get 10% discount on pineapple glasses.</p>
                             </div>
                         </div>
 
-                        <div class="page__thanks-body">
+                        <div class="page__thanks-body" id="page__thanks-body">
                             <div class="newsletter">
                                 <img src="/img/Union.svg" alt="Union">
                                 <h1>Thanks for subscribing!</h1>
@@ -48,17 +48,18 @@
                         </div>
                         
                         <div class="page__form-body">
-                            <form class="base" action="">
+                            <form class="base" action="" id="form">
                                 <div class="input-group">
                                     
                                     <input type="email" id="form-email" name="email" placeholder="Type your email address here…">
                                     <div class="submit" type="submit" id="submit"><img id="submit-img" src="/img/ic_arrow.svg" alt="arrow"></div>
+                                    <small>Error message</small>
                                 </div>
                                 <label class="checkbox">
                                     <div class="checkbox-label">
                                         I agree to <span><a href="#">terms of service</a></span>
                                     </div>
-                                    <input type="checkbox" id="form-terms" name="terms" checked="checked">
+                                    <input type="checkbox" id="form-terms" name="terms" >
                                     <span class="checkmark"></span>
                                 </label>
                             </form>
