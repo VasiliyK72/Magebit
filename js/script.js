@@ -13,19 +13,13 @@ const terms         = document.querySelector("#form-terms");
 
 /*--Input Form--*/
 input_group.addEventListener("mouseover", function( event ) {
-    submit_img.src="/img/ic_arrow_hover.svg";
-    /*submit.style.borderTop      = "1px solid #4066A5";
-    submit.style.borderBottom   = "1px solid #4066A5";
-    submit.style.borderRight    = "1px solid #4066A5";*/
-
+    submit_img.src="img/ic_arrow_hover.svg";
+    
     email.style.border         = "1px solid #4066A5";
     email.style.borderLeft     = "4px solid #4066A5";
 },false);
 input_group.addEventListener("mouseout", function( event ) {
-    submit_img.src="/img/ic_arrow.svg";
-    /*submit.style.borderTop      = "1px solid #E3E3E4";
-    submit.style.borderBottom   = "1px solid #E3E3E4";
-    submit.style.borderRight    = "1px solid #E3E3E4";*/
+    submit_img.src="img/ic_arrow.svg";
     
     email.style.border         = "1px solid #E3E3E4";
     email.style.borderLeft     = "4px solid #E3E3E4";
@@ -34,9 +28,13 @@ input_group.addEventListener("mouseout", function( event ) {
 submit.addEventListener('click', e => {
 	e.preventDefault();
 	
-	if(checkInputs()=== true) setSuccessFor(email);
+	data = checkInputs();
+	data.act = "new_email";
+	
+	if(data.result === true) setSuccessFor(email, data);
 });
 
+/*--Validation---*/
 function checkInputs() {
 	// trim to remove the whitespaces
 	
@@ -66,10 +64,10 @@ function checkInputs() {
         validation = (validation) ? true : false;
 	}
 
-	console.log(validation);
-	return validation;
+	return {result: validation, email: emailValue, terms: termsValue};
 }
 
+/*--Error--*/
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;
 	const small = formControl.querySelector('small');
@@ -77,15 +75,27 @@ function setErrorFor(input, message) {
 	small.innerText = message;
 }
 
-function setSuccessFor(input) {
-    const formControl = input.parentElement;
-	formControl.className       = 'input-group';
-	form.style.display          = "none";
-    newsletter.style.display    = "none";
-    thanks.style.display        = "block";
 
+/*--Success--*/
+function setSuccessFor(input, data) {
+    
+    
+    send_comand( data, 
+        function(R) {
+            console.log('Success');
+            const formControl = input.parentElement;
+        	formControl.className       = 'input-group';
+        	form.style.display          = "none";
+            newsletter.style.display    = "none";
+            thanks.style.display        = "block";
+        },
+        function(R) {
+            console.log('Error');
+            setErrorFor(email, R.message);
+    } );
 }
-	
+
+/*--Specific validation Email--*/
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
