@@ -9,7 +9,7 @@ if(ERROR_REPORTING) {
 // DB
 define('PDO_DSN', 'mysql:host=localhost;dbname=magebit');
 define('PDO_USER', 'user_magebit');
-define('PDO_PASSWORD', 'www123');
+define('PDO_PASSWORD', '****');
 
 // WEBSITE
 
