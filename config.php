@@ -7,9 +7,9 @@ if(ERROR_REPORTING) {
 }
 
 // DB
-define('PDO_DSN', 'mysql:host=localhost;dbname=catfish_magebit');
-define('PDO_USER', 'catfish_organaiz');
-define('PDO_PASSWORD', 'v@cHoU7#Ymz@');
+define('PDO_DSN', 'mysql:host=localhost;dbname=magebit');
+define('PDO_USER', 'user_magebit');
+define('PDO_PASSWORD', 'www123');
 
 // WEBSITE
 
