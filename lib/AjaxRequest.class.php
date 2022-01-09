@@ -27,6 +27,7 @@ class AjaxRequest
         $this->request = json_decode(file_get_contents("php://input"));
         // RAR GET
         //$this->request = $request;
+        //print_r($this->request);
         $this->action = $this->getRequestParam("act");
 
         if (!empty($this->actions[$this->action])) 
@@ -46,10 +47,9 @@ class AjaxRequest
 
     public function getRequestParam($name)
     {
-        if (array_key_exists($name, $this->request)) {
+        if (isset($name, $this->request)) {
             $value = trim($this->request->$name);
-            // По книге Создаем динамические сайты с помощью PHP. стр 313
-            if( get_magic_quotes_gpc()) $value=stripslashes($value);
+            // Filtering result
             $value = strip_tags($value);
             $value = filter_var($value, FILTER_SANITIZE_STRING);
             $value = htmlentities($value);

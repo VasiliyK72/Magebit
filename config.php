@@ -9,7 +9,7 @@ ini_set('display_startup_errors', 1);
 // DB
 define('PDO_DSN', 'mysql:host=localhost;dbname=magebit');
 define('PDO_USER', 'user_magebit');
-define('PDO_PASSWORD', '****');
+define('PDO_PASSWORD', 'www123');
 
 // WEBSITE
 
@@ -38,5 +38,8 @@ require_once "lib/rb-mysql.php";
 
 R::setup( PDO_DSN, PDO_USER, PDO_PASSWORD ); //for both mysql or mariaDB
 R::freeze( true ); //will freeze redbeanphp
+
+// Проверка подключения к БД
+if(!R::testConnection()) die('No DB connection!');
 
 ?>

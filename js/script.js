@@ -78,8 +78,6 @@ function setErrorFor(input, message) {
 
 /*--Success--*/
 function setSuccessFor(input, data) {
-    
-    
     send_comand( data, 
         function(R) {
             console.log('Success');
@@ -88,17 +86,20 @@ function setSuccessFor(input, data) {
         	form.style.display          = "none";
             newsletter.style.display    = "none";
             thanks.style.display        = "block";
+            email.value = '';
         },
         function(R) {
             console.log('Error');
             setErrorFor(email, R.message);
-    } );
+        } 
+    );
 }
 
 /*--Specific validation Email--*/
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
 function isColombia(email) {
 	return /^[a-z0-9]+@[a-z]+\.co$/.test(email);
 }
