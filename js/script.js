@@ -34,11 +34,15 @@ submit.addEventListener('click', e => {
 	if(data.result === true) setSuccessFor(email, data);
 });
 
-
 //When opening the application, focus on the email input.
 email.focus();
 email.addEventListener("focus", () => delErrorFor(email));
 terms.addEventListener("focus", () => delErrorFor(email));
+
+// Ловим нажатие клавиши энтер на строке поиск
+email.addEventListener("keyup", function(event) {  
+    if(event.keyCode==13) { event.preventDefault(); submit.click(); }
+});
 
 /*--Validation---*/
 function checkInputs() {
