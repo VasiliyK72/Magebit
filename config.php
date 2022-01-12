@@ -9,7 +9,7 @@ ini_set('display_startup_errors', 1);
 // DB
 define('PDO_DSN', 'mysql:host=localhost;dbname=magebit');
 define('PDO_USER', 'user_magebit');
-define('PDO_PASSWORD', 'www123');
+define('PDO_PASSWORD', '****');
 
 // WEBSITE
 
